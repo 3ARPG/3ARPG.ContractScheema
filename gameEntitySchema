@@ -39,13 +39,6 @@
         "type": "integer",
         "format": "int32"
       },
-      "Set": {
-        "$ref": "#/definitions/Set"
-      },
-      "StatId": {
-        "type": "integer",
-        "format": "int32"
-      },
       "Stat": {
         "$ref": "#/definitions/Stat"
       }
@@ -77,32 +70,6 @@
             {"const": 4, "description": "Archer"},
             {"const": 5, "description": "Warrior"}
          ]
-      },
-      "Set": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "Id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "SetObjectIds": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          "Bonuses": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/definitions/Stat"
-            }
-          }
-        }
       },
       "Stat": {
         "type": "object",
