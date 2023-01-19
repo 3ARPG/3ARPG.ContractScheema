@@ -1,0 +1,317 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Item",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Type": {
+      "$ref": "#/definitions/SlotType"
+    },
+    "Location": {
+      "$ref": "#/definitions/ItemLocation"
+    },
+    "LocData": {
+      "$ref": "#/definitions/SlotType"
+    },
+    "Count": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Grade": {
+      "type": "integer",
+      "format": "byte"
+    },
+    "Score": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "ClassType": {
+      "$ref": "#/definitions/CharacterClassType"
+    },
+    "Price": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "DelaySeconds": {
+      "type": "integer"
+    },
+    "OwnerId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Owner": {
+      "$ref": "#/definitions/Character"
+    },
+    "SetId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Set": {
+      "$ref": "#/definitions/Set"
+    },
+    "StatId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Stat": {
+      "$ref": "#/definitions/Stat"
+    }
+  },
+  "definitions": {
+    "SlotType": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Helmet",
+        "Gloves",
+        "Boots",
+        "Body",
+        "Legs",
+        "Weapon",
+        "Shield",
+        "Consumable"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "ItemLocation": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Inventory",
+        "Npc"
+      ],
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "CharacterClassType": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Warrior",
+        "Wizard",
+        "Warlock",
+        "Assassin",
+        "Archer",
+        "Unspecified"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        -1
+      ]
+    },
+    "Character": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "IsMale": {
+          "type": "boolean"
+        },
+        "SkinId": {
+          "type": "integer",
+          "format": "byte"
+        },
+        "Level": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CurrentExp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "CurrentMp": {
+          "type": "integer"
+        },
+        "CurrentHp": {
+          "type": "integer"
+        },
+        "PvPKills": {
+          "type": "integer"
+        },
+        "IsOnline": {
+          "type": "boolean"
+        },
+        "LastTimeActive": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "AccountId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Account": {
+          "$ref": "#/definitions/Account"
+        },
+        "LocationId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Location": {
+          "$ref": "#/definitions/Location"
+        },
+        "ClassId": {
+          "type": "integer",
+          "format": "byte"
+        },
+        "Class": {
+          "$ref": "#/definitions/Class"
+        }
+      }
+    },
+    "Account": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Location": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Class": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "StatId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Stat": {
+          "$ref": "#/definitions/Stat"
+        }
+      }
+    },
+    "Stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MDef": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PDef": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MAttack": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PAttack": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CritDmg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CritChance": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Hp": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Mp": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "HpReg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MpReg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "HpPerLvl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MpPerLvl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "OwnerId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Set": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
