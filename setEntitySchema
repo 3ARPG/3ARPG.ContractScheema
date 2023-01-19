@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Set",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "SetObjectIds": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "Bonuses": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/Stat"
+      }
+    }
+  },
+  "definitions": {
+    "Stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MDef": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PDef": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MAttack": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PAttack": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CritDmg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CritChance": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Hp": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Mp": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "HpReg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MpReg": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "HpPerLvl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MpPerLvl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "OwnerId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}
