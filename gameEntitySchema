@@ -1,0 +1,170 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "GameEntity",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "Id": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "Name": {
+        "type": "string"
+      },
+      "Description": {
+        "type": "string"
+      },
+      "Type": {
+        "$ref": "#/definitions/SlotType"
+      },
+      "Grade": {
+        "type": "integer",
+        "format": "byte"
+      },
+      "Score": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "ClassType": {
+        "$ref": "#/definitions/CharacterClassType"
+      },
+      "Price": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "DelaySeconds": {
+        "type": "integer"
+      },
+      "SetId": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "Set": {
+        "$ref": "#/definitions/Set"
+      },
+      "StatId": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "Stat": {
+        "$ref": "#/definitions/Stat"
+      }
+    },
+    "definitions": {
+      "SlotType": {
+        "type": "integer",
+        "description": "Item slot where it should be located, invenotry etc. ",
+        "oneOf": [
+            {"const": 0, "description": "None"},
+            {"const": 1, "description": "Helmet"},
+            {"const": 2, "description": "Gloves"},
+            {"const": 3, "description": "Boots"},
+            {"const": 4, "description": "Body"},
+            {"const": 5, "description": "Legs"},
+            {"const": 6, "description": "Weapon"},
+            {"const": 7, "description": "Shield"},
+            {"const": 8, "description": "Consumable"}
+         ]
+      },
+      "CharacterClassType": {
+        "type": "integer",
+        "description": "Character classes",
+        "oneOf": [
+            {"const": 0, "description": "Unspecified"},
+            {"const": 1, "description": "Wizard"},
+            {"const": 2, "description": "Warlock"},
+            {"const": 3, "description": "Assassin"},
+            {"const": 4, "description": "Archer"},
+            {"const": 5, "description": "Warrior"}
+         ]
+      },
+      "Set": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "SetObjectIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "Bonuses": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/definitions/Stat"
+            }
+          }
+        }
+      },
+      "Stat": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MDef": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PDef": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MAttack": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PAttack": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CritDmg": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CritChance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Hp": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Mp": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HpReg": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MpReg": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HpPerLvl": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MpPerLvl": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "OwnerId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    }
+  }
