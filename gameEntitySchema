@@ -41,6 +41,10 @@
       },
       "Stat": {
         "$ref": "#/definitions/Stat"
+      },
+      "SkinId" : {
+        "type": "integer",
+        "format": "int32"
       }
     },
     "definitions": {
